@@ -22,6 +22,7 @@ public class ElytraListener implements Listener
         this.bityard = bityard;
     }
 
+    // Plays a sound when openning wings
     @EventHandler
     public void onStartGlide(EntityToggleGlideEvent event)
     {
@@ -30,7 +31,7 @@ public class ElytraListener implements Listener
             if (event.getEntityType() == EntityType.PLAYER)
             {
                 Player player = (Player)event.getEntity();
-                player.getWorld().playSound(player.getLocation(), Sound.ENTITY_ENDERDRAGON_FLAP, SoundCategory.PLAYERS, 0.4f, 2f);
+                player.getWorld().playSound(player.getLocation(), Sound.ENTITY_ENDER_DRAGON_FLAP, SoundCategory.PLAYERS, 0.4f, 2f);
             }
         }
         catch (Exception e)
@@ -39,6 +40,7 @@ public class ElytraListener implements Listener
         }
     }
 
+    // Stop gliding and play a sound when sneaking while gliding
     @EventHandler
     public void onSneakWhileGliding(PlayerToggleSneakEvent event)
     {
@@ -48,7 +50,7 @@ public class ElytraListener implements Listener
             if (player.isGliding())
             {
                 player.setGliding(false);
-                player.getWorld().playSound(player.getLocation(), Sound.ENTITY_ENDERDRAGON_FLAP, SoundCategory.PLAYERS, 0.4f, 1.5f);
+                player.getWorld().playSound(player.getLocation(), Sound.ENTITY_ENDER_DRAGON_FLAP, SoundCategory.PLAYERS, 0.4f, 1.5f);
             }
         }
         catch (Exception e)

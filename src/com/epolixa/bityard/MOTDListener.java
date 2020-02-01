@@ -39,7 +39,7 @@ public class MOTDListener implements Listener
             cornerA.getBlockZ() == cornerB.getBlockZ() ? cornerA.getBlockZ() : cornerA.getBlockZ() + random.nextInt(cornerB.getBlockZ() - cornerA.getBlockZ() + 1)
         );
 
-        if (bityard.getServer().getWorld("world").getBlockAt(signLoc).getType() == Material.WALL_SIGN)
+        if (isWallSign(bityard.getServer().getWorld("world").getBlockAt(signLoc).getType()))
         {
             sign = (Sign)bityard.getServer().getWorld("world").getBlockAt(signLoc).getState();
         }
@@ -52,5 +52,15 @@ public class MOTDListener implements Listener
             String signText = stringBuilder.toString();
             event.setMotd(signText);
         }
+    }
+
+    private boolean isWallSign(Material material) {
+        return (    material == Material.OAK_WALL_SIGN ||
+                    material == Material.SPRUCE_WALL_SIGN ||
+                    material == Material.BIRCH_WALL_SIGN ||
+                    material == Material.JUNGLE_WALL_SIGN ||
+                    material == Material.ACACIA_WALL_SIGN ||
+                    material == Material.DARK_OAK_WALL_SIGN
+        );
     }
 }
