@@ -1,0 +1,10 @@
+name: Bityard
+version: 1.1.14
+author: epolixa
+main: com.epolixa.bityard.Bityard
+depend: [ProtocolLib]
+website: epolixa.com
+commands:
+    afk:
+        description: Set self as AFK
+        usage: /afk [reason]
