@@ -22,12 +22,16 @@ public class MOTDListener implements Listener
         FileConfiguration config =  bityard.getConfig();
         this.cornerA = new Location(bityard.getServer().getWorld("world"), config.getInt("MOTD_X_MIN"), config.getInt("MOTD_Y_MIN"), config.getInt("MOTD_Z_MIN"));
         this.cornerB = new Location(bityard.getServer().getWorld("world"), config.getInt("MOTD_X_MAX"), config.getInt("MOTD_Y_MAX"), config.getInt("MOTD_Z_MAX"));
+
+        this.bityard.log("MOTDListener initialized with cornerA = " + this.bityard.locationXYZ(this.cornerA) + " and cornerB = " + this.bityard.locationXYZ(this.cornerB));
     }
 
 
     @EventHandler
     public void onMOTDUpdate(ServerListPingEvent event)
     {
+        bityard.log("update motd");
+
         Sign sign = null;
         Random random = new Random();
 

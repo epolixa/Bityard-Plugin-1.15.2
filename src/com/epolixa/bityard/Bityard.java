@@ -17,8 +17,9 @@ public class Bityard extends JavaPlugin
         // Register orphan event listeners
         PluginManager pluginManager = getServer().getPluginManager();
         //pluginManager.registerEvents(new BeaconListener(this), this); // beacon titles
-        pluginManager.registerEvents(new MOTDListener(this), this); // change motd from town hall
+        //pluginManager.registerEvents(new MOTDListener(this), this); // change motd from town hall
         pluginManager.registerEvents(new ElytraListener(this), this); // elytra polish
+        pluginManager.registerEvents(new WanderingTraderListener(this), this); // random wandering trader
 
         // Start child classes
         log("Starting child classes");
