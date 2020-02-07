@@ -27,6 +27,8 @@ public class WanderingTraderListener implements Listener {
     private List<Material> materialBlacklist;
     private List<Material> enchantableMaterials;
     private List<Material> potionMaterials;
+    private List<Material> previousMaterials;
+    private List<Material> expensiveMaterials;
 
     private final int NUM_OFFERS;
     private final int MIN_PRICE;
@@ -35,21 +37,25 @@ public class WanderingTraderListener implements Listener {
     private final int MAX_AMOUNT;
     private final int MIN_USES;
     private final int MAX_USES;
+    private final int BONUS_PRICE;
 
     public WanderingTraderListener(Bityard bityard) {
         this.bityard = bityard;
 
         buildMaterialBlacklist();
+        buildExpensiveMaterials();
         buildEnchantableMaterials();
         buildPotionMaterials();
+        this.previousMaterials = new ArrayList<Material>();
 
         this.NUM_OFFERS = 6;
         this.MIN_PRICE = 1;
-        this.MAX_PRICE = 24;
+        this.MAX_PRICE = 6;
         this.MIN_AMOUNT = 1;
         this.MAX_AMOUNT = 8;
         this.MIN_USES = 4;
         this.MAX_USES = 16;
+        this.BONUS_PRICE = 32 - this.MAX_PRICE;
     }
 
     // Intercept wandering trader when he spawns and build trades
@@ -70,10 +76,9 @@ public class WanderingTraderListener implements Listener {
                     Material randomMaterial = Material.values()[random.nextInt(Material.values().length)];
 
                     // check if material is illegal or has been added
-                    if (this.materialBlacklist.contains(randomMaterial) || pickedMaterials.contains(randomMaterial)) {
+                    if (this.materialBlacklist.contains(randomMaterial) || pickedMaterials.contains(randomMaterial) || this.previousMaterials.contains(randomMaterial)) {
                         // skip and try again
                         i--;
-                        continue;
                     } else {
                         // add recipe
                         pickedMaterials.add(randomMaterial);
@@ -83,11 +88,12 @@ public class WanderingTraderListener implements Listener {
                 }
 
                 wanderingTrader.setRecipes(newRecipes);
+                this.previousMaterials = pickedMaterials;
             }
         }
         catch (Exception e)
         {
-            bityard.log(e.toString());
+            e.printStackTrace();
         }
     }
 
@@ -102,8 +108,8 @@ public class WanderingTraderListener implements Listener {
             sellItem = addRandomEffect(sellItem);
         }
         sellItem.setAmount(inRange(this.MIN_AMOUNT, Math.min(sellItem.getMaxStackSize(), this.MAX_AMOUNT)));
-        recipe = new MerchantRecipe(sellItem, inRange(this.MIN_USES, this.MAX_USES));
-        recipe.addIngredient(new ItemStack(Material.EMERALD, inRange(this.MIN_PRICE, this.MAX_PRICE)));
+        recipe = new MerchantRecipe(sellItem, inRange(this.MIN_USES, this.expensiveMaterials.contains(material) ? this.MAX_USES / 2 : this.MAX_USES));
+        recipe.addIngredient(new ItemStack(Material.EMERALD, inRange(this.MIN_PRICE, this.expensiveMaterials.contains(material) ? this.MAX_PRICE + this.BONUS_PRICE : this.MAX_PRICE)));
         return recipe;
     }
 
@@ -208,6 +214,76 @@ public class WanderingTraderListener implements Listener {
         potionMaterials.add(Material.TIPPED_ARROW);
     }
 
+    private void buildExpensiveMaterials() {
+        this.expensiveMaterials = new ArrayList<Material>();
+
+        // DIAMOND GEAR
+        expensiveMaterials.add(Material.DIAMOND_SWORD);
+        expensiveMaterials.add(Material.DIAMOND_PICKAXE);
+        expensiveMaterials.add(Material.DIAMOND_AXE);
+        expensiveMaterials.add(Material.DIAMOND_SHOVEL);
+        expensiveMaterials.add(Material.DIAMOND_HOE);
+        expensiveMaterials.add(Material.DIAMOND_LEGGINGS);
+        expensiveMaterials.add(Material.DIAMOND_BOOTS);
+        expensiveMaterials.add(Material.DIAMOND_HELMET);
+        expensiveMaterials.add(Material.DIAMOND_CHESTPLATE);
+        expensiveMaterials.add(Material.DIAMOND_HORSE_ARMOR);
+
+        // MISC GEAR
+        expensiveMaterials.add(Material.BOW);
+        expensiveMaterials.add(Material.FISHING_ROD);
+        expensiveMaterials.add(Material.TRIDENT);
+        expensiveMaterials.add(Material.CROSSBOW);
+        expensiveMaterials.add(Material.SHIELD);
+        expensiveMaterials.add(Material.ENCHANTED_BOOK);
+        expensiveMaterials.add(Material.MOJANG_BANNER_PATTERN);
+
+        // POTIONS
+        expensiveMaterials.add(Material.POTION);
+        expensiveMaterials.add(Material.LINGERING_POTION);
+        expensiveMaterials.add(Material.SPLASH_POTION);
+
+        // WORKSTATIONS
+        expensiveMaterials.add(Material.JUKEBOX);
+        expensiveMaterials.add(Material.ENCHANTING_TABLE);
+        expensiveMaterials.add(Material.ENDER_CHEST);
+        expensiveMaterials.add(Material.ANVIL);
+        expensiveMaterials.add(Material.LOOM);
+        expensiveMaterials.add(Material.BARREL);
+        expensiveMaterials.add(Material.SMOKER);
+        expensiveMaterials.add(Material.BLAST_FURNACE);
+        expensiveMaterials.add(Material.CARTOGRAPHY_TABLE);
+        expensiveMaterials.add(Material.FLETCHING_TABLE);
+        expensiveMaterials.add(Material.GRINDSTONE);
+        expensiveMaterials.add(Material.SMITHING_TABLE);
+        expensiveMaterials.add(Material.STONECUTTER);
+        expensiveMaterials.add(Material.BELL);
+        expensiveMaterials.add(Material.CAMPFIRE);
+        expensiveMaterials.add(Material.BEE_NEST);
+        expensiveMaterials.add(Material.BEEHIVE);
+
+        // SPAWN EGGS
+        expensiveMaterials.add(Material.ZOMBIE_SPAWN_EGG);
+        expensiveMaterials.add(Material.SKELETON_SPAWN_EGG);
+        expensiveMaterials.add(Material.SPIDER_SPAWN_EGG);
+        expensiveMaterials.add(Material.CAVE_SPIDER_SPAWN_EGG);
+        expensiveMaterials.add(Material.SILVERFISH_SPAWN_EGG);
+        expensiveMaterials.add(Material.BLAZE_SPAWN_EGG);
+
+        // HEADS
+        expensiveMaterials.add(Material.ZOMBIE_HEAD);
+        expensiveMaterials.add(Material.SKELETON_SKULL);
+        expensiveMaterials.add(Material.CREEPER_HEAD);
+
+        // RESOURCES
+        expensiveMaterials.add(Material.SHULKER_SHELL);
+        expensiveMaterials.add(Material.NAUTILUS_SHELL);
+        expensiveMaterials.add(Material.DRAGON_BREATH);
+        expensiveMaterials.add(Material.SCUTE);
+        expensiveMaterials.add(Material.ENDER_EYE);
+        expensiveMaterials.add(Material.EXPERIENCE_BOTTLE);
+    }
+
     private void buildMaterialBlacklist() {
         this.materialBlacklist = new ArrayList<>();
 
@@ -276,9 +352,14 @@ public class WanderingTraderListener implements Listener {
         materialBlacklist.add(Material.CONDUIT);
         materialBlacklist.add(Material.DRAGON_EGG);
         materialBlacklist.add(Material.DRAGON_HEAD);
+        materialBlacklist.add(Material.WITHER_SKELETON_SKULL);
         materialBlacklist.add(Material.ELYTRA);
         materialBlacklist.add(Material.EMERALD);
         materialBlacklist.add(Material.EMERALD_BLOCK);
+        materialBlacklist.add(Material.IRON_BLOCK);
+        materialBlacklist.add(Material.GOLD_BLOCK);
+        materialBlacklist.add(Material.REDSTONE_BLOCK);
+        materialBlacklist.add(Material.COAL_BLOCK);
         materialBlacklist.add(Material.EMERALD_ORE);
         materialBlacklist.add(Material.ENCHANTED_GOLDEN_APPLE);
         materialBlacklist.add(Material.END_CRYSTAL);
