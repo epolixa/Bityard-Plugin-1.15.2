@@ -71,7 +71,13 @@ public class WanderingTraderListener implements Listener {
                 List<MerchantRecipe> newRecipes = new ArrayList<>(); // recipes to be added to merchant
                 List<Material> pickedMaterials = new ArrayList<>(); // materials already added
 
-                for (int i = 0; i < NUM_OFFERS; i++) {
+                // Add at least one material from expensive items list first
+                Material expensiveMaterial = this.expensiveMaterials.get(random.nextInt(expensiveMaterials.size()));
+                pickedMaterials.add(expensiveMaterial);
+                newRecipes.add(buildRecipe(expensiveMaterial));
+                this.bityard.log(" - " + expensiveMaterial.toString());
+
+                for (int i = 0; i < NUM_OFFERS - 1; i++) {
                     // next selected random material
                     Material randomMaterial = Material.values()[random.nextInt(Material.values().length)];
 
@@ -269,6 +275,7 @@ public class WanderingTraderListener implements Listener {
         expensiveMaterials.add(Material.CAVE_SPIDER_SPAWN_EGG);
         expensiveMaterials.add(Material.SILVERFISH_SPAWN_EGG);
         expensiveMaterials.add(Material.BLAZE_SPAWN_EGG);
+        expensiveMaterials.add(Material.MAGMA_CUBE_SPAWN_EGG);
 
         // HEADS
         expensiveMaterials.add(Material.ZOMBIE_HEAD);
@@ -282,6 +289,13 @@ public class WanderingTraderListener implements Listener {
         expensiveMaterials.add(Material.SCUTE);
         expensiveMaterials.add(Material.ENDER_EYE);
         expensiveMaterials.add(Material.EXPERIENCE_BOTTLE);
+        expensiveMaterials.add(Material.IRON_BLOCK);
+        expensiveMaterials.add(Material.GOLD_BLOCK);
+        expensiveMaterials.add(Material.REDSTONE_BLOCK);
+        expensiveMaterials.add(Material.COAL_BLOCK);
+        expensiveMaterials.add(Material.DIAMOND_BLOCK);
+        expensiveMaterials.add(Material.ENCHANTED_GOLDEN_APPLE);
+        expensiveMaterials.add(Material.TURTLE_EGG);
     }
 
     private void buildMaterialBlacklist() {
@@ -330,7 +344,7 @@ public class WanderingTraderListener implements Listener {
         materialBlacklist.add(Material.TRIPWIRE);
         materialBlacklist.add(Material.WRITTEN_BOOK);
 
-        // Too OP, valuable, rare
+        // Too OP, valuable, rare, collectibles
         materialBlacklist.add(Material.BEACON);
         materialBlacklist.add(Material.SHULKER_BOX);
         materialBlacklist.add(Material.BLACK_SHULKER_BOX);
@@ -356,12 +370,7 @@ public class WanderingTraderListener implements Listener {
         materialBlacklist.add(Material.ELYTRA);
         materialBlacklist.add(Material.EMERALD);
         materialBlacklist.add(Material.EMERALD_BLOCK);
-        materialBlacklist.add(Material.IRON_BLOCK);
-        materialBlacklist.add(Material.GOLD_BLOCK);
-        materialBlacklist.add(Material.REDSTONE_BLOCK);
-        materialBlacklist.add(Material.COAL_BLOCK);
         materialBlacklist.add(Material.EMERALD_ORE);
-        materialBlacklist.add(Material.ENCHANTED_GOLDEN_APPLE);
         materialBlacklist.add(Material.END_CRYSTAL);
         materialBlacklist.add(Material.HEART_OF_THE_SEA);
         materialBlacklist.add(Material.MUSIC_DISC_11);
@@ -379,10 +388,8 @@ public class WanderingTraderListener implements Listener {
         materialBlacklist.add(Material.NETHER_STAR);
         materialBlacklist.add(Material.PLAYER_HEAD);
         materialBlacklist.add(Material.TOTEM_OF_UNDYING);
-        materialBlacklist.add(Material.TURTLE_EGG);
         materialBlacklist.add(Material.TURTLE_HELMET);
         materialBlacklist.add(Material.WITHER_ROSE);
-        materialBlacklist.add(Material.DIAMOND_BLOCK);
 
         // Banned Spawn Eggs
         materialBlacklist.add(Material.BAT_SPAWN_EGG);
@@ -405,7 +412,6 @@ public class WanderingTraderListener implements Listener {
         materialBlacklist.add(Material.HORSE_SPAWN_EGG);
         materialBlacklist.add(Material.HUSK_SPAWN_EGG);
         materialBlacklist.add(Material.LLAMA_SPAWN_EGG);
-        materialBlacklist.add(Material.MAGMA_CUBE_SPAWN_EGG);
         materialBlacklist.add(Material.MOOSHROOM_SPAWN_EGG);
         materialBlacklist.add(Material.MULE_SPAWN_EGG);
         materialBlacklist.add(Material.OCELOT_SPAWN_EGG);
