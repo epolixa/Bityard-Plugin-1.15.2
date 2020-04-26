@@ -113,7 +113,11 @@ public class WanderingTraderListener implements Listener {
         if (this.potionMaterials.contains(material)) {
             sellItem = addRandomEffect(sellItem);
         }
-        sellItem.setAmount(inRange(this.MIN_AMOUNT, Math.min(sellItem.getMaxStackSize(), this.MAX_AMOUNT)));
+        if (this.expensiveMaterials.contains(material)) {
+            sellItem.setAmount(1);
+        } else {
+            sellItem.setAmount(inRange(this.MIN_AMOUNT, Math.min(sellItem.getMaxStackSize(), this.MAX_AMOUNT)));
+        }
         recipe = new MerchantRecipe(sellItem, inRange(this.MIN_USES, this.expensiveMaterials.contains(material) ? this.MAX_USES / 2 : this.MAX_USES));
         recipe.addIngredient(new ItemStack(Material.EMERALD, inRange(this.MIN_PRICE, this.expensiveMaterials.contains(material) ? this.MAX_PRICE + this.BONUS_PRICE : this.MAX_PRICE)));
         return recipe;
