@@ -50,34 +50,36 @@ public class GatewayListener implements Listener
 
                 w.playEffect(deLoc, Effect.END_GATEWAY_SPAWN, 0);
 
-                bityard.log("attempting to update spawn Gateway destination coords to location of player...");
-                Location segLoc = new Location(w, c.getInt("SPAWN_GATEWAY_X"), c.getInt("SPAWN_GATEWAY_Y"), c.getInt("SPAWN_GATEWAY_Z"));
-                if (segLoc.getBlock().getState() instanceof EndGateway)
-                {
-                    EndGateway seg = (EndGateway) segLoc.getBlock().getState();
-                    seg.setExitLocation(p.getLocation());
-                    seg.setExactTeleport(true);
-                    seg.update();
-                    w.playEffect(segLoc, Effect.END_GATEWAY_SPAWN, 0);
-                    bityard.log("found and updated spawn Gateway");
-                }
-                else
-                {
-                    bityard.log("cannot find End Gateway at SPAWN_GATEWAY coords");
-                }
-
-                bityard.log("attempting to remove old Gateway...");
                 Location oegLoc = new Location(w, c.getInt("RETURN_GATEWAY_X"), c.getInt("RETURN_GATEWAY_Y"), c.getInt("RETURN_GATEWAY_Z"));
-                if (oegLoc.getBlock().getState() instanceof EndGateway)
-                {
-                    EndGateway oeg = (EndGateway) oegLoc.getBlock().getState();
-                    oegLoc.getBlock().setType(Material.AIR);
-                    w.playEffect(oegLoc, Effect.END_GATEWAY_SPAWN, 0);
-                    bityard.log("found and removed old Gateway");
-                }
-                else
-                {
-                    bityard.log("cannot find old End Gateway at RETURN_GATEWAY coords");
+                if (!bityard.locationXYZ(deLoc).equalsIgnoreCase(bityard.locationXYZ(oegLoc))) {
+                    bityard.log("attempting to remove old Gateway...");
+                    if (oegLoc.getBlock().getState() instanceof EndGateway)
+                    {
+                        EndGateway oeg = (EndGateway) oegLoc.getBlock().getState();
+                        oegLoc.getBlock().setType(Material.AIR);
+                        w.playEffect(oegLoc, Effect.END_GATEWAY_SPAWN, 0);
+                        bityard.log("found and removed old Gateway");
+                    }
+                    else
+                    {
+                        bityard.log("cannot find old End Gateway at RETURN_GATEWAY coords");
+                    }
+
+                    bityard.log("attempting to update spawn Gateway destination coords to location of player...");
+                    Location segLoc = new Location(w, c.getInt("SPAWN_GATEWAY_X"), c.getInt("SPAWN_GATEWAY_Y"), c.getInt("SPAWN_GATEWAY_Z"));
+                    if (segLoc.getBlock().getState() instanceof EndGateway)
+                    {
+                        EndGateway seg = (EndGateway) segLoc.getBlock().getState();
+                        seg.setExitLocation(p.getLocation());
+                        seg.setExactTeleport(true);
+                        seg.update();
+                        w.playEffect(segLoc, Effect.END_GATEWAY_SPAWN, 0);
+                        bityard.log("found and updated spawn Gateway");
+                    }
+                    else
+                    {
+                        bityard.log("cannot find End Gateway at SPAWN_GATEWAY coords");
+                    }
                 }
 
                 bityard.log("updating RETURN_GATEWAY coords with new End Gateway location");
