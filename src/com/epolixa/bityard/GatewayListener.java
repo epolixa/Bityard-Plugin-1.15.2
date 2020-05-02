@@ -1,19 +1,17 @@
 package com.epolixa.bityard;
 
-import org.bukkit.Location;
-import org.bukkit.Material;
-import org.bukkit.World;
+import org.bukkit.*;
 import org.bukkit.block.Block;
 import org.bukkit.block.EndGateway;
 import org.bukkit.configuration.file.FileConfiguration;
-import org.bukkit.entity.EnderPearl;
-import org.bukkit.entity.Player;
+import org.bukkit.entity.*;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.ProjectileHitEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.event.player.PlayerTeleportEvent;
 import org.bukkit.inventory.PlayerInventory;
+import org.bukkit.util.Vector;
 
 public class GatewayListener implements Listener
 {
@@ -42,13 +40,15 @@ public class GatewayListener implements Listener
 
                 FileConfiguration c = bityard.getConfig();
 
-                bityard.log("creating end Gateway at dragon egg location");
+                bityard.log("creating End Gateway at dragon egg location");
                 deLoc.getBlock().setType(Material.END_GATEWAY);
                 EndGateway deeg = (EndGateway) deLoc.getBlock().getState();
                 Location sege = new Location(w, c.getInt("SPAWN_GATEWAY_EXIT_X"), c.getInt("SPAWN_GATEWAY_EXIT_Y"), c.getInt("SPAWN_GATEWAY_EXIT_Z"));
                 deeg.setExitLocation(sege);
                 deeg.setExactTeleport(true);
                 deeg.update();
+
+                w.playEffect(deLoc, Effect.END_GATEWAY_SPAWN, 0);
 
                 bityard.log("attempting to update spawn Gateway destination coords to location of player...");
                 Location segLoc = new Location(w, c.getInt("SPAWN_GATEWAY_X"), c.getInt("SPAWN_GATEWAY_Y"), c.getInt("SPAWN_GATEWAY_Z"));
@@ -58,6 +58,7 @@ public class GatewayListener implements Listener
                     seg.setExitLocation(p.getLocation());
                     seg.setExactTeleport(true);
                     seg.update();
+                    w.playEffect(segLoc, Effect.END_GATEWAY_SPAWN, 0);
                     bityard.log("found and updated spawn Gateway");
                 }
                 else
@@ -65,12 +66,13 @@ public class GatewayListener implements Listener
                     bityard.log("cannot find End Gateway at SPAWN_GATEWAY coords");
                 }
 
-                bityard.log("attempting to remove old gateway...");
+                bityard.log("attempting to remove old Gateway...");
                 Location oegLoc = new Location(w, c.getInt("RETURN_GATEWAY_X"), c.getInt("RETURN_GATEWAY_Y"), c.getInt("RETURN_GATEWAY_Z"));
                 if (oegLoc.getBlock().getState() instanceof EndGateway)
                 {
                     EndGateway oeg = (EndGateway) oegLoc.getBlock().getState();
                     oegLoc.getBlock().setType(Material.AIR);
+                    w.playEffect(oegLoc, Effect.END_GATEWAY_SPAWN, 0);
                     bityard.log("found and removed old Gateway");
                 }
                 else
@@ -99,11 +101,11 @@ public class GatewayListener implements Listener
         {
             // if ender pearl teleport and location is dragon egg
             if (ev.getCause() == PlayerTeleportEvent.TeleportCause.ENDER_PEARL) {
-                int r = 1;
+                int r = 2;
                 Location to = ev.getTo();
                 boolean nearDragonEgg = false;
                 for (int x = to.getBlockX() - r; x < to.getBlockX() + r; x++) {
-                    for (int y = (to.getBlockY() - 1) - r; y < (to.getBlockY() - 1) + r; y++) {
+                    for (int y = to.getBlockY() - r; y < to.getBlockY() + r; y++) {
                         for (int z = to.getBlockZ() - r; z < to.getBlockZ() + r; z++) {
                             if (to.getWorld().getBlockAt(x,y,z).getType() == Material.DRAGON_EGG) {
                                 nearDragonEgg = true;
