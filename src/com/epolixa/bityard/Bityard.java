@@ -27,7 +27,7 @@ public class Bityard extends JavaPlugin
     {
         log("Enabling...");
 
-        // Save config
+        // Save config if one does not exist
         saveDefaultConfig();
 
         colorMap = buildColorMap();
@@ -41,6 +41,7 @@ public class Bityard extends JavaPlugin
         pluginManager.registerEvents(new ServerListPingListener(this), this); // change motd from town hall
         pluginManager.registerEvents(new ElytraListener(this), this); // elytra polish
         pluginManager.registerEvents(new WanderingTraderListener(this), this); // random wandering trader
+        pluginManager.registerEvents(new GatewayListener(this), this); // relocate end gateway with dragon egg
 
         // Start child classes
         log("Starting child classes");
