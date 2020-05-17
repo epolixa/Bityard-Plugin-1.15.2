@@ -27,50 +27,28 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Bityard.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/epolixa/bityard/Bityard.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="44" column="0" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="method#pickMOTD#0;class#Bityard#0" expanded="false" />
-                <element signature="method#buildColorMap#0;class#Bityard#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ElytraListener.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/epolixa/bityard/ElytraListener.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="29" column="31" selection-start-line="29" selection-start-column="16" selection-end-line="29" selection-end-column="131" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GatewayListener.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/epolixa/bityard/GatewayListener.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="50" column="65" selection-start-line="50" selection-start-column="65" selection-end-line="50" selection-end-column="65" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="config.yml" pinned="false" current-in-tab="true">
+      <file leaf-file-name="config.yml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/config.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.31688598">
+            <state vertical-scroll-proportion="-10.703704">
               <caret line="17" column="25" selection-start-line="17" selection-start-column="25" selection-end-line="17" selection-end-column="25" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="WanderingTraderListener.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/com/epolixa/bityard/WanderingTraderListener.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.54632586">
+              <caret line="78" column="71" selection-start-line="78" selection-start-column="71" selection-end-line="78" selection-end-column="71" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="method#addRandomEffect#0;class#WanderingTraderListener#0" expanded="false" />
+                <element signature="method#buildEnchantableMaterials#0;class#WanderingTraderListener#0" expanded="false" />
+                <element signature="method#buildExpensiveMaterials#0;class#WanderingTraderListener#0" expanded="false" />
+                <element signature="method#buildMaterialBlacklist#0;class#WanderingTraderListener#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -107,10 +85,10 @@
         <option value="$PROJECT_DIR$/src/com/epolixa/bityard/MOTDListener.java" />
         <option value="$PROJECT_DIR$/src/com/epolixa/bityard/ElytraListener.java" />
         <option value="$PROJECT_DIR$/src/com/epolixa/bityard/ServerListPingListener.java" />
-        <option value="$PROJECT_DIR$/src/com/epolixa/bityard/WanderingTraderListener.java" />
         <option value="$PROJECT_DIR$/src/com/epolixa/bityard/Bityard.java" />
         <option value="$PROJECT_DIR$/src/com/epolixa/bityard/GatewayListener.java" />
         <option value="$PROJECT_DIR$/src/config.yml" />
+        <option value="$PROJECT_DIR$/src/com/epolixa/bityard/WanderingTraderListener.java" />
       </list>
     </option>
   </component>
@@ -157,7 +135,6 @@
     <panes>
       <pane id="PackagesPane" />
       <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -268,6 +245,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -564,12 +542,11 @@
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32969603" sideWeight="0.49841017" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24629775" sideWeight="0.3807631" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24629775" sideWeight="0.37480128" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24629775" sideWeight="0.6192369" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24629775" sideWeight="0.6251987" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3198032" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32969603" sideWeight="0.49841017" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32969603" sideWeight="0.49841017" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24205087" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -577,13 +554,14 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -599,13 +577,6 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/epolixa/bityard/WanderingTraderListener.java</url>
-          <line>167</line>
-          <properties />
-        </line-breakpoint>
-      </breakpoints>
       <option name="time" value="1" />
     </breakpoint-manager>
     <watches-manager />
@@ -663,10 +634,8 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#addRandomEnchantment#0;class#WanderingTraderListener#0" expanded="false" />
             <element signature="method#addRandomEffect#0;class#WanderingTraderListener#0" expanded="false" />
             <element signature="method#buildEnchantableMaterials#0;class#WanderingTraderListener#0" expanded="false" />
-            <element signature="method#buildPotionMaterials#0;class#WanderingTraderListener#0" expanded="false" />
             <element signature="method#buildExpensiveMaterials#0;class#WanderingTraderListener#0" expanded="false" />
             <element signature="method#buildMaterialBlacklist#0;class#WanderingTraderListener#0" expanded="false" />
           </folding>
@@ -721,10 +690,8 @@
           <caret line="346" column="57" selection-start-line="346" selection-start-column="57" selection-end-line="346" selection-end-column="57" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#addRandomEnchantment#0;class#WanderingTraderListener#0" expanded="false" />
             <element signature="method#addRandomEffect#0;class#WanderingTraderListener#0" expanded="false" />
             <element signature="method#buildEnchantableMaterials#0;class#WanderingTraderListener#0" expanded="false" />
-            <element signature="method#buildPotionMaterials#0;class#WanderingTraderListener#0" expanded="false" />
             <element signature="method#buildExpensiveMaterials#0;class#WanderingTraderListener#0" expanded="false" />
             <element signature="method#buildMaterialBlacklist#0;class#WanderingTraderListener#0" expanded="false" />
           </folding>
@@ -749,10 +716,8 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#addRandomEnchantment#0;class#WanderingTraderListener#0" expanded="false" />
             <element signature="method#addRandomEffect#0;class#WanderingTraderListener#0" expanded="false" />
             <element signature="method#buildEnchantableMaterials#0;class#WanderingTraderListener#0" expanded="false" />
-            <element signature="method#buildPotionMaterials#0;class#WanderingTraderListener#0" expanded="false" />
             <element signature="method#buildExpensiveMaterials#0;class#WanderingTraderListener#0" expanded="false" />
             <element signature="method#buildMaterialBlacklist#0;class#WanderingTraderListener#0" expanded="false" />
           </folding>
@@ -777,10 +742,8 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#addRandomEnchantment#0;class#WanderingTraderListener#0" expanded="false" />
             <element signature="method#addRandomEffect#0;class#WanderingTraderListener#0" expanded="false" />
             <element signature="method#buildEnchantableMaterials#0;class#WanderingTraderListener#0" expanded="false" />
-            <element signature="method#buildPotionMaterials#0;class#WanderingTraderListener#0" expanded="false" />
             <element signature="method#buildExpensiveMaterials#0;class#WanderingTraderListener#0" expanded="false" />
             <element signature="method#buildMaterialBlacklist#0;class#WanderingTraderListener#0" expanded="false" />
           </folding>
@@ -805,10 +768,8 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#addRandomEnchantment#0;class#WanderingTraderListener#0" expanded="false" />
             <element signature="method#addRandomEffect#0;class#WanderingTraderListener#0" expanded="false" />
             <element signature="method#buildEnchantableMaterials#0;class#WanderingTraderListener#0" expanded="false" />
-            <element signature="method#buildPotionMaterials#0;class#WanderingTraderListener#0" expanded="false" />
             <element signature="method#buildExpensiveMaterials#0;class#WanderingTraderListener#0" expanded="false" />
             <element signature="method#buildMaterialBlacklist#0;class#WanderingTraderListener#0" expanded="false" />
           </folding>
@@ -845,10 +806,8 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#addRandomEnchantment#0;class#WanderingTraderListener#0" expanded="false" />
             <element signature="method#addRandomEffect#0;class#WanderingTraderListener#0" expanded="false" />
             <element signature="method#buildEnchantableMaterials#0;class#WanderingTraderListener#0" expanded="false" />
-            <element signature="method#buildPotionMaterials#0;class#WanderingTraderListener#0" expanded="false" />
             <element signature="method#buildExpensiveMaterials#0;class#WanderingTraderListener#0" expanded="false" />
             <element signature="method#buildMaterialBlacklist#0;class#WanderingTraderListener#0" expanded="false" />
           </folding>
@@ -909,10 +868,8 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#addRandomEnchantment#0;class#WanderingTraderListener#0" expanded="false" />
             <element signature="method#addRandomEffect#0;class#WanderingTraderListener#0" expanded="false" />
             <element signature="method#buildEnchantableMaterials#0;class#WanderingTraderListener#0" expanded="false" />
-            <element signature="method#buildPotionMaterials#0;class#WanderingTraderListener#0" expanded="false" />
             <element signature="method#buildExpensiveMaterials#0;class#WanderingTraderListener#0" expanded="false" />
             <element signature="method#buildMaterialBlacklist#0;class#WanderingTraderListener#0" expanded="false" />
           </folding>
@@ -1066,7 +1023,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.1118421">
           <caret line="12" column="17" selection-start-line="12" selection-start-column="17" selection-end-line="12" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1074,13 +1030,46 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.1118421">
           <caret line="11" column="40" selection-start-line="11" selection-start-column="36" selection-end-line="11" selection-end-column="45" />
-          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/../spigot-api-1.15.2-R0.1-20200127.215000-23.jar!/org/bukkit/entity/Entity.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.76864034">
+          <caret line="163" column="9" selection-start-line="163" selection-start-column="9" selection-end-line="163" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/../spigot-api-1.15.2-R0.1-20200127.215000-23.jar!/org/bukkit/entity/DragonFireball.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.1118421">
+          <caret line="9" column="17" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/epolixa/bityard/GatewayListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.9446219">
+          <caret line="113" column="38" selection-start-line="113" selection-start-column="38" selection-end-line="113" selection-end-column="38" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/epolixa/bityard/ElytraListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.38445154">
+          <caret line="29" column="31" selection-start-line="29" selection-start-column="16" selection-end-line="29" selection-end-column="131" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/epolixa/bityard/Bityard.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state vertical-scroll-proportion="0.23961662">
           <caret line="44" column="0" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1090,63 +1079,25 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/config.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-10.703704">
+          <caret line="17" column="25" selection-start-line="17" selection-start-column="25" selection-end-line="17" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/epolixa/bityard/WanderingTraderListener.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.4526092">
-          <caret line="96" column="57" selection-start-line="96" selection-start-column="57" selection-end-line="96" selection-end-column="57" />
+        <state vertical-scroll-proportion="0.54632586">
+          <caret line="78" column="71" selection-start-line="78" selection-start-column="71" selection-end-line="78" selection-end-column="71" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#addRandomEnchantment#0;class#WanderingTraderListener#0" expanded="false" />
             <element signature="method#addRandomEffect#0;class#WanderingTraderListener#0" expanded="false" />
             <element signature="method#buildEnchantableMaterials#0;class#WanderingTraderListener#0" expanded="false" />
-            <element signature="method#buildPotionMaterials#0;class#WanderingTraderListener#0" expanded="false" />
             <element signature="method#buildExpensiveMaterials#0;class#WanderingTraderListener#0" expanded="false" />
             <element signature="method#buildMaterialBlacklist#0;class#WanderingTraderListener#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/../spigot-api-1.15.2-R0.1-20200127.215000-23.jar!/org/bukkit/entity/Entity.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.76864034">
-          <caret line="163" column="9" selection-start-line="163" selection-start-column="9" selection-end-line="163" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/../spigot-api-1.15.2-R0.1-20200127.215000-23.jar!/org/bukkit/entity/DragonFireball.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.1118421">
-          <caret line="9" column="17" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/epolixa/bityard/ElytraListener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="29" column="31" selection-start-line="29" selection-start-column="16" selection-end-line="29" selection-end-column="131" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/epolixa/bityard/GatewayListener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="50" column="65" selection-start-line="50" selection-start-column="65" selection-end-line="50" selection-end-column="65" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/config.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.31688598">
-          <caret line="17" column="25" selection-start-line="17" selection-start-column="25" selection-end-line="17" selection-end-column="25" />
-          <folding />
         </state>
       </provider>
     </entry>

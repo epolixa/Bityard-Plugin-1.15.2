@@ -10,6 +10,7 @@ import org.bukkit.event.entity.CreatureSpawnEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.MerchantRecipe;
 import org.bukkit.inventory.meta.BookMeta;
+import org.bukkit.inventory.meta.EnchantmentStorageMeta;
 import org.bukkit.inventory.meta.PotionMeta;
 import org.bukkit.potion.PotionData;
 import org.bukkit.potion.PotionEffect;
@@ -107,7 +108,7 @@ public class WanderingTraderListener implements Listener {
     private MerchantRecipe buildRecipe(Material material) {
         MerchantRecipe recipe;
         ItemStack sellItem = new ItemStack(material);
-        if (this.enchantableMaterials.contains(material) && inRange(0,1) == 1) {
+        if (material == Material.ENCHANTED_BOOK || (this.enchantableMaterials.contains(material) && inRange(0,1) == 1)) {
             sellItem = addRandomEnchantment(sellItem);
         }
         if (this.potionMaterials.contains(material)) {
@@ -124,16 +125,25 @@ public class WanderingTraderListener implements Listener {
     }
 
     private ItemStack addRandomEnchantment(ItemStack item) {
-        List<Enchantment> possible = new ArrayList<Enchantment>();
-        for (Enchantment ench : Enchantment.values()) {
-            if (ench.canEnchantItem(item)) {
-                possible.add(ench);
+        if (item.getType() == Material.ENCHANTED_BOOK) {
+            EnchantmentStorageMeta meta = (EnchantmentStorageMeta) item.getItemMeta();
+            Enchantment chosen = Enchantment.values()[random.nextInt(Enchantment.values().length)];
+            int lvl = 1 + (int) (Math.random() * ((chosen.getMaxLevel() - 1) + 1));
+            meta.addStoredEnchant(chosen, lvl, false);
+            item.setItemMeta(meta);
+        } else {
+            List<Enchantment> possible = new ArrayList<Enchantment>();
+            for (Enchantment ench : Enchantment.values()) {
+                if (ench.canEnchantItem(item)) {
+                    possible.add(ench);
+                }
             }
-        }
-        if (possible.size() >= 1) {
-            Collections.shuffle(possible);
-            Enchantment chosen = possible.get(0);
-            item.addEnchantment(chosen, 1 + (int) (Math.random() * ((chosen.getMaxLevel() - 1) + 1)));
+            if (possible.size() >= 1) {
+                Collections.shuffle(possible);
+                Enchantment chosen = possible.get(0);
+                int lvl = 1 + (int) (Math.random() * ((chosen.getMaxLevel() - 1) + 1));
+                item.addEnchantment(chosen, lvl);
+            }
         }
         return item;
     }
